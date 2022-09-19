@@ -5,19 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prepare": "husky install",
-    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "prepare": "husky install",
+    "report": "rimraf dist && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}"
   },
   "dependencies": {
+    "element-plus": "^2.2.17",
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "@vitejs/plugin-legacy": "^2.2.0",
     "@vitejs/plugin-vue": "^3.1.0",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "consola": "^2.15.3",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -25,9 +31,17 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "rollup-plugin-visualizer": "^5.8.1",
     "sass": "^1.54.9",
+    "terser": "^5.15.0",
     "typescript": "^4.6.4",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.7",
     "vite": "^3.1.0",
+    "vite-plugin-remove-console": "^1.1.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-svg-loader": "^3.6.0",
     "vue-tsc": "^0.40.4"
   },
   "lint-staged": {
