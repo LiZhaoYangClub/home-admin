@@ -1,4 +1,5 @@
 <template>
+  <SvgIcon name="vue"></SvgIcon>
   <VueSvg /> <HelloWorld msg="Vite + Vue" />
   <el-button type="warning" plain>Warning</el-button>
   <el-button type="danger" plain>Danger</el-button>
@@ -6,19 +7,19 @@
 
 <script lang="ts" setup name="App">
 import { ElMessage } from 'element-plus'
+import { useThemeStoreHook } from './store/modules/theme'
 import VueSvg from '/@/assets/vue.svg?component'
 
-const cc = reactive({
-  dd: '222'
-})
-
 onMounted(() => {
-  console.log(1111, cc)
   ElMessage({
     showClose: true,
     message: 'Warning, this is a warning message.',
     type: 'warning'
   })
+
+  setTimeout(() => {
+    useThemeStoreHook().setTheme('dark')
+  }, 2000)
 })
 </script>
 

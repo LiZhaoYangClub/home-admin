@@ -8,6 +8,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // Eleme
 
 const loadUnPluginVueComponents = () =>
   Components({
+    dirs: ['src/components'],
     dts: 'types/components.d.ts', // enabled by default if `typescript` is installed
     resolvers: [ElementPlusResolver()],
     types: [

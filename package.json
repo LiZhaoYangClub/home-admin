@@ -13,7 +13,10 @@
     "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}"
   },
   "dependencies": {
+    "@vueuse/components": "^9.2.0",
+    "@vueuse/core": "^9.2.0",
     "element-plus": "^2.2.17",
+    "pinia": "^2.0.22",
     "vue": "^3.2.37"
   },
   "devDependencies": {
@@ -38,8 +41,11 @@
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",
     "vite": "^3.1.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-remove-console": "^1.1.0",
     "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vite-svg-loader": "^3.6.0",
     "vue-tsc": "^0.40.4"

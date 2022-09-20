@@ -28,6 +28,13 @@ export default defineConfig({
   resolve: {
     alias
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "/@/styles/global/var.scss" as *;`
+      }
+    }
+  },
   // 服务端渲染
   server: {
     // 是否开启 https
