@@ -26,6 +26,7 @@ const __APP_INFO__ = {
 }
 
 export default defineConfig({
+  base: './',
   root,
   resolve: {
     alias
