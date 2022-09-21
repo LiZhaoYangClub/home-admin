@@ -18,7 +18,7 @@ onMounted(() => {
   })
 
   setTimeout(() => {
-    useThemeStoreHook().setTheme('dark')
+    useThemeStoreHook().setTheme('theme-dark')
   }, 2000)
 })
 </script>

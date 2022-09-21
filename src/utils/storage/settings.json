@@ -2,5 +2,5 @@
   "version": "0.0.1",
   "prefixCls": "lzy",
   "themeColor": "#ccc",
-  "theme": "default"
+  "theme": "theme-default"
 }

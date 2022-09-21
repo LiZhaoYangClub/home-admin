@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { resolve } from 'path'
 import pkg from './package.json'
 import { defineConfig } from 'vite'
@@ -20,7 +21,7 @@ const alias: Record<string, string> = {
 const { dependencies, devDependencies, name, version } = pkg
 const __APP_INFO__ = {
   pkg: { dependencies, devDependencies, name, version },
-  lastBuildTime: new Date()
+  lastBuildTime: dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss')
 }
 
 export default defineConfig({
@@ -46,7 +47,7 @@ export default defineConfig({
   },
   plugins: loadPlugins(),
   optimizeDeps: {
-    include: ['pinia', 'lodash-es', '@vueuse/core'],
+    include: ['pinia', 'lodash-es', '@vueuse/core', 'dayjs'],
     exclude: []
   },
   build: {

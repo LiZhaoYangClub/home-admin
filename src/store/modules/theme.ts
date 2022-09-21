@@ -8,7 +8,7 @@ export const useThemeStore = defineStore({
   id: 'admin-Theme',
   state: () => ({
     themeColor: sys.value.themeColor ?? '#ccc',
-    theme: sys.value.theme ?? 'default'
+    theme: sys.value.theme ?? 'theme-default'
   }),
   getters: {
     getThemeColor(): string {
@@ -16,16 +16,6 @@ export const useThemeStore = defineStore({
     },
     getTheme(): string {
       return this.theme
-    },
-    /** 用于mix导航模式下hamburger-svg的fill属性 */
-    fill() {
-      if (this.theme === 'light') {
-        return '#409eff'
-      } else if (this.theme === 'yellow') {
-        return '#d25f00'
-      } else {
-        return '#fff'
-      }
     }
   },
   actions: {
