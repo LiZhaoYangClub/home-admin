@@ -1,4 +1,5 @@
 import { StorageSerializers, useStorage } from '@vueuse/core'
+import { changeTheme } from '../theme'
 
 import settings from './settings.json'
 
@@ -92,5 +93,8 @@ class Locale {
 }
 
 const locale = new Locale()
+
+// 初始化默认主题
+changeTheme(settings.theme)
 
 export default locale

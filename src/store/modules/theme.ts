@@ -1,5 +1,6 @@
 import { store } from '/@/store'
 import { defineStore } from 'pinia'
+import { changeTheme } from '/@/utils/theme'
 
 import locale from '/@/utils/storage'
 const sys = locale.getSystem()
@@ -8,7 +9,7 @@ export const useThemeStore = defineStore({
   id: 'admin-Theme',
   state: () => ({
     themeColor: sys.value.themeColor ?? '#ccc',
-    theme: sys.value.theme ?? 'theme-default'
+    theme: sys.value.theme ?? 'default'
   }),
   getters: {
     getThemeColor(): string {
@@ -26,6 +27,7 @@ export const useThemeStore = defineStore({
     setTheme(newTheme: string): void {
       locale.updateSystem({ theme: newTheme })
       this.theme = newTheme
+      changeTheme(newTheme)
     }
   }
 })

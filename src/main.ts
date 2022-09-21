@@ -3,7 +3,7 @@ import 'virtual:svg-icons-register'
 import '/@/utils/storage'
 import App from './App.vue'
 
-// import '/@/styles/index.scss'
+import '/@/styles/index.scss'
 
 import { createApp } from 'vue'
 

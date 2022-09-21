@@ -11,8 +11,17 @@
 
 // css-vars-ponyfill
 export const changeTheme = (name: string) => {
+  // 清除原皮肤
+  const preLinkDom = document.querySelectorAll(`link[title]`)
+  preLinkDom.forEach(link => {
+    if (link) {
+      ;(link as HTMLLinkElement).disabled = true
+    }
+  })
   // 渲染 red.css 这个皮肤
-  const linkDom = document.querySelector(`link[href="${name}.css"]`) as Nullable<HTMLLinkElement>
+  const linkDom = document.querySelector(
+    `link[href="/theme/${name}.css"]`
+  ) as Nullable<HTMLLinkElement>
   if (!linkDom) return
   linkDom.disabled = false
 }

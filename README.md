@@ -14,3 +14,58 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+## Theme
+
+- 注入拦截前缀 在 `/@/styles/global/var.scss` 文件中, 会自动注入到全局 在 `sass` 文件中直接使用变量即可
+
+```scss
+$prefixCls: 'lzy';
+```
+
+- 修改 `/@/utils/storage/settings.json` 文件中的 `prefixCls` 需同上面保持一致 此作用在 `js` 中获取前缀
+
+```json
+{
+  "prefixCls": "lzy"
+}
+```
+
+- `/public/theme/**.css` 为全局主题文件，需在 `index.html` 中引用
+
+```css
+/* /public/theme/default.css */
+:root {
+  --el-color-white: #0e2031 !important;
+}
+```
+
+- 主题切换定义在 `/@/utils/theme/index.ts` 中 `changeTheme` 方法 可直接调用封装的 `/@/store/modules/theme.ts` 中 `setTheme` 方法
+
+- 组件中使用：
+
+```vue
+<template>
+  <svg :class="className">
+    <use :xlink:href="symbolId" />
+  </svg>
+</template>
+
+<script lang="ts" setup name="SvgIcon">
+import locale from '/@/utils/storage'
+
+// 获取系统配置
+const sys = locale.getSystem()
+
+const className = computed(() => `${sys.prefixCls}-svg-icon svg-icon`)
+</script>
+
+<style lang="scss" scoped>
+// 定义类名
+$svg: '#{$prefixCls}-svg-icon';
+// 使用
+.#{$svg} {
+  color: var(--el-color-white);
+}
+</style>
+```

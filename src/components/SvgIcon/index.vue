@@ -46,6 +46,7 @@ const getStyle = computed((): CSSProperties => {
 </script>
 
 <style lang="scss" scoped>
+$svg: '#{$prefixCls}-svg-icon';
 .svg-icon {
   display: inline-block;
   overflow: hidden;
@@ -55,5 +56,9 @@ const getStyle = computed((): CSSProperties => {
 
 .svg-icon-spin {
   animation: loadingCircle 1s infinite linear;
+}
+
+.#{$svg} {
+  color: var(--el-color-white);
 }
 </style>
