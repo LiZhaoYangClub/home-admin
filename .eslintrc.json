@@ -30,8 +30,10 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function": 0,
     "no-console": "off",
     "no-debugger": 0,
+    "no-empty-function": 0,
     "generator-star-spacing": "off",
     "no-mixed-operators": 0,
     "vue/max-attributes-per-line": [

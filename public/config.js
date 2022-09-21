@@ -1,0 +1,2 @@
+window.apiUrl = ''
+window.urlPrefix = ''

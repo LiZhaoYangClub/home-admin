@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import pkg from './package.json'
 import { defineConfig } from 'vite'
 import loadPlugins from './build/plugins'
+import { createProxy } from './build/proxy'
 
 /** 当前执行node命令时文件夹的地址（工作目录） */
 const root: string = process.cwd()
@@ -44,8 +45,9 @@ export default defineConfig({
     https: false,
     // 端口号
     port: 9527,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
     // 本地跨域代理
+    proxy: createProxy()
   },
   plugins: loadPlugins(),
   optimizeDeps: {
