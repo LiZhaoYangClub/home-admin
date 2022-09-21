@@ -23,7 +23,7 @@
       "/#/*": ["types/*"]
     },
     "types": ["node", "vite/client", "element-plus/global", "vite-plugin-svg-icons/client"],
-    "typeRoots": ["./node_modules/@types/", "./types", "./node_modules/**/*.d.ts"]
+    "typeRoots": ["./node_modules/@types/", "./types"]
   },
   "include": [
     "src/**/*.ts",
