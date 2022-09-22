@@ -5,16 +5,16 @@
   /* 自定义 */
   /* 文字 */
   /* 标题色 */
-  --primary-text-color: #303133;
+  --c-primary-text-color: #303133;
   /* 正文色 */
-  --regular-text-color: #606266;
+  --c-regular-text-color: #606266;
   /* 二级文字 */
-  --secondary-text-color: #909399;
+  --c-secondary-text-color: #909399;
   /* 提示类 */
-  --placeholder-text-color: #a8abb2;
+  --c-placeholder-text-color: #a8abb2;
   /* 禁用类 */
-  --disabled-text-color: #c0c4cc;
+  --c-disabled-text-color: #c0c4cc;
 
   /* 背景 */
-  --page-bg-color: #f2f3f5;
+  --c-page-bg-color: #f2f3f5;
 }

@@ -78,13 +78,13 @@ $no-exist-page: '#{$prefixCls}-no-exist-page';
       font-weight: 500;
       font-size: 36px;
       line-height: 62px;
-      color: var(--primary-text-color);
+      color: var(--c-primary-text-color);
     }
     .description {
       font-weight: 400;
       font-size: 16px;
       line-height: 32px;
-      color: var(--secondary-text-color);
+      color: var(--c-secondary-text-color);
     }
     button {
       margin: 8px 0;

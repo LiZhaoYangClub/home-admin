@@ -1,3 +1,20 @@
 :root {
+  /* 修改element-plus */
   --el-color-white: #80a9d2 !important;
+
+  /* 自定义 */
+  /* 文字 */
+  /* 标题色 */
+  --c-primary-text-color: #67c23a;
+  /* 正文色 */
+  --c-regular-text-color: #606266;
+  /* 二级文字 */
+  --c-secondary-text-color: #909399;
+  /* 提示类 */
+  --c-placeholder-text-color: #a8abb2;
+  /* 禁用类 */
+  --c-disabled-text-color: #c0c4cc;
+
+  /* 背景 */
+  --c-page-bg-color: #f2f3f5;
 }
