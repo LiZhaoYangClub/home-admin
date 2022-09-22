@@ -8,6 +8,8 @@ import '/@/styles/index.scss'
 import { createApp } from 'vue'
 
 import { setupStore } from '/@/store'
+import { setupRouter } from '/@/router'
+import { setupPlugin } from '/@/plugins'
 
 const bootstrap = async () => {
   const app = createApp(App)
@@ -25,9 +27,12 @@ const bootstrap = async () => {
   // 异步案例：语言文件可能从服务器端获取
   // await setupI18n(app)
 
+  // 注册全局插件
+  setupPlugin(app)
+
   // Configure routing
   // 配置路由
-  // setupRouter(app)
+  setupRouter(app)
 
   // router-guard
   // 路由守卫

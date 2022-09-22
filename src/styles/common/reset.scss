@@ -20,3 +20,11 @@ select:focus,
 textarea:focus {
   outline: -webkit-focus-ring-color auto 0;
 }
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--page-bg-color);
+}
