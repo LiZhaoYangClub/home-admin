@@ -11,16 +11,6 @@ import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-i
 const loadStyleImport = () =>
   createStyleImportPlugin({
     resolves: [ElementPlusResolve()]
-    // 自定义规则
-    // libs: [
-    //   {
-    //     libraryName: 'ant-design-vue',
-    //     esModule: true,
-    //     resolveStyle: (name: string) => {
-    //       return `ant-design-vue/es/${name}/style/index`
-    //     }
-    //   }
-    // ]
   })
 
 export default loadStyleImport

@@ -10,7 +10,11 @@ const loadUnPluginVueComponents = () =>
   Components({
     dirs: ['src/components'],
     dts: 'types/components.d.ts', // enabled by default if `typescript` is installed
-    resolvers: [ElementPlusResolver()],
+    resolvers: [
+      ElementPlusResolver({
+        importStyle: 'sass' // 默认true css | sass 首先加载css
+      })
+    ],
     types: [
       {
         from: 'vue-router',
