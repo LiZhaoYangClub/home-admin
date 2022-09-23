@@ -62,9 +62,9 @@
 
 <script setup lang="ts" name="500Page">
 import noServer from '/@/assets/status/500.svg?component'
-import appConfig from '/@/hooks'
+import { sys } from '/@/hooks'
 
-const prefixCls = computed(() => `${appConfig.prefixCls}-no-server-page`)
+const prefixCls = computed(() => `${sys.value.prefixCls}-no-server-page`)
 </script>
 
 <style lang="scss" scoped>
