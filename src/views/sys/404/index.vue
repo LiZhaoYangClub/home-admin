@@ -62,9 +62,9 @@
 
 <script setup lang="ts" name="404Page">
 import noExist from '/@/assets/status/404.svg?component'
-import appConfig from '/@/hooks'
+import { sys } from '/@/hooks'
 
-const prefixCls = computed(() => `${appConfig.prefixCls}-no-exist-page`)
+const prefixCls = computed(() => `${sys.value.prefixCls}-no-exist-page`)
 </script>
 
 <style lang="scss" scoped>

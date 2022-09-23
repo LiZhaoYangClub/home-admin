@@ -61,10 +61,10 @@
 </template>
 
 <script setup lang="ts" name="403Page">
-import appConfig from '/@/hooks'
+import { sys } from '/@/hooks'
 import noAccess from '/@/assets/status/403.svg?component'
 
-const prefixCls = computed(() => `${appConfig.prefixCls}-no-access-page`)
+const prefixCls = computed(() => `${sys.value.prefixCls}-no-access-page`)
 </script>
 
 <style lang="scss" scoped>

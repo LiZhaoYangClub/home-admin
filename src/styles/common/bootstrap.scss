@@ -834,3 +834,8 @@ a.text-dark:focus {
   /*! autoprefixer: off; */
   -webkit-box-orient: vertical;
 }
+
+.outline-none {
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+}

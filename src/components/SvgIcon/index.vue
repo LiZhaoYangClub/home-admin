@@ -10,7 +10,7 @@
 
 <script lang="ts" setup name="SvgIcon">
 import type { CSSProperties } from 'vue'
-import appConfig from '/@/hooks'
+import { sys } from '/@/hooks'
 
 const props = defineProps({
   prefix: {
@@ -31,7 +31,7 @@ const props = defineProps({
   }
 })
 
-const prefixCls = computed(() => `${appConfig.prefixCls}-svg-icon svg-icon`)
+const prefixCls = computed(() => `${sys.value.prefixCls}-svg-icon svg-icon`)
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 
 const getStyle = computed((): CSSProperties => {
