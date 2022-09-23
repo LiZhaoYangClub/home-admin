@@ -3,7 +3,6 @@ import type { RouteRecordRaw } from 'vue-router'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import { asyncRoutes, basicRoutes } from './routes'
-console.log(1111, asyncRoutes, basicRoutes)
 
 // 白名单应该包含基本静态路由
 const WHITE_NAME_LIST: string[] = []

@@ -27,12 +27,6 @@ import { useThemeStoreHook } from '/@/store/modules/theme'
 
 const dataTheme = ref<string>(sys.value.theme)
 
-onMounted(() => {
-  setTimeout(() => {
-    useThemeStoreHook().setTheme('dark')
-  }, 2000)
-})
-
 watch(sys, () => {
   dataTheme.value = sys.value.theme
 })

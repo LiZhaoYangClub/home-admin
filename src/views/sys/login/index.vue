@@ -2,6 +2,12 @@
   <div :class="`${prefixCls} w-100 h-100 position-relative overflow-hidden`">
     <img :src="bg" class="wave" />
     <ToolBar />
+    <div class="container position-center d-flex w-100 justify-content-around align-items-center`">
+      <div class="img">
+        <component :is="currentWeek" />
+      </div>
+      <LoginForm />
+    </div>
   </div>
 </template>
 
@@ -10,6 +16,8 @@ import bg from '/@/assets/login/bg.png'
 
 import { sys } from '/@/hooks'
 import ToolBar from './toolBar.vue'
+import LoginForm from './form.vue'
+import currentWeek from './static'
 
 const prefixCls = computed(() => `${sys.value.prefixCls}-login-page`)
 </script>
@@ -23,6 +31,11 @@ $login-page: '#{$prefixCls}-login-page';
     height: 100%;
     left: 0;
     bottom: 0;
+  }
+  .container {
+    .img {
+      width: 500px;
+    }
   }
 }
 </style>
