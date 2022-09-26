@@ -2,8 +2,8 @@
   <div :class="`${prefixCls} w-100 h-100 position-relative overflow-hidden`">
     <img :src="bg" class="wave" />
     <ToolBar />
-    <div class="container position-center d-flex w-100 justify-content-around align-items-center`">
-      <div class="img">
+    <div class="container position-center d-flex w-100 justify-content-around align-items-center">
+      <div class="img`">
         <component :is="currentWeek" />
       </div>
       <LoginForm />
@@ -33,6 +33,7 @@ $login-page: '#{$prefixCls}-login-page';
     bottom: 0;
   }
   .container {
+    height: 80%;
     .img {
       width: 500px;
     }

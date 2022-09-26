@@ -39,7 +39,7 @@ type Writable<T> = {
   -readonly [P in keyof T]: T[P]
 }
 
-type Nullable<T> = T | null
+export type Nullable<T> = T | null
 type NonNullable<T> = T extends null | undefined ? never : T
 type Recordable<T = any> = Record<string, T>
 type ReadonlyRecordable<T = any> = {

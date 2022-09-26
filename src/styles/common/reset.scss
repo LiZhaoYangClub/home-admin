@@ -28,3 +28,21 @@ textarea:focus {
   position: relative;
   background-color: var(--c-page-bg-color);
 }
+
+// 修改input的自动填充的样式
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px var(--c-page-bg-color) inset;
+  -webkit-text-fill-color: var(--c-regular-text-color);
+  caret-color: #fff;
+  -webkit-transition-delay: 111111s;
+  -webkit-transition: color 11111s ease-out, background-color 111111s ease-out;
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+  -webkit-text-fill-color: var(--c-regular-text-color);
+  transition: background-color 5000s ease-in-out 0s !important;
+}

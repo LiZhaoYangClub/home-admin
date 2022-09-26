@@ -9,7 +9,7 @@ type userType = {
   token: string
   name?: string
   verifyCode?: string
-  currentPage?: number | string
+  currentPage?: number
 }
 
 const data = getToken()
@@ -43,7 +43,7 @@ export const useUserStore = defineStore({
     SET_VERIFY_CODE(verifyCode: string) {
       this.verifyCode = verifyCode
     },
-    SET_CURRENT_PAGE(value: number | string) {
+    SET_CURRENT_PAGE(value: number) {
       this.currentPage = value
     },
     /** 登入 */

@@ -23,9 +23,11 @@
     "js-cookie": "^3.0.1",
     "lodash.clonedeep": "^4.5.0",
     "pinia": "^2.0.22",
+    "qrcode": "^1.5.1",
     "qs": "^6.11.0",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "vue-types": "^4.2.1"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",
@@ -33,6 +35,7 @@
     "@types/lodash.clonedeep": "^4.5.7",
     "@types/lodash.omit": "^4.5.7",
     "@types/node": "^18.7.18",
+    "@types/qrcode": "^1.5.0",
     "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",

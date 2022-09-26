@@ -17,4 +17,7 @@
 
   /* 背景 */
   --c-page-bg-color: #f2f3f5;
+
+  /* SvgIcon */
+  --c-svg-icon-color: #c0c4cc;
 }

@@ -59,6 +59,6 @@ $svg: '#{$prefixCls}-svg-icon';
 }
 
 .#{$svg} {
-  color: var(--el-color-white);
+  color: var(--c-svg-icon-color);
 }
 </style>

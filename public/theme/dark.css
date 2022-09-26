@@ -1,15 +1,24 @@
 :root {
   /* 修改element-plus */
   --el-color-white: #0e2031 !important;
+  --el-text-color-primary: #ffffff !important;
+
+  /* 输入框 */
+  /* 背景色 */
+  --el-fill-color-blank: #606266 !important;
+  /* 文字颜色 */
+  --el-text-color-regular: #ffffff !important;
+  /* 前后icon 颜色 */
+  --el-text-color-placeholder: #ffffff !important;
 
   /* 自定义 */
   /* 文字 */
   /* 标题色 */
-  --c-primary-text-color: #303133;
+  --c-primary-text-color: #ffffff;
   /* 正文色 */
-  --c-regular-text-color: #606266;
+  --c-regular-text-color: #ffffff;
   /* 二级文字 */
-  --c-secondary-text-color: #909399;
+  --c-secondary-text-color: #dfe2e9;
   /* 提示类 */
   --c-placeholder-text-color: #a8abb2;
   /* 禁用类 */
@@ -17,4 +26,7 @@
 
   /* 背景 */
   --c-page-bg-color: #606266;
+
+  /* SvgIcon */
+  --c-svg-icon-color: #ffffff;
 }
