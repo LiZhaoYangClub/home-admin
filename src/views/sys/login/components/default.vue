@@ -102,14 +102,17 @@ const prefixCls = computed<string>(() => `${sys.value.prefixCls}-login-page-form
 const onLogin = async (formEl: FormInstance | undefined) => {
   loading.value = true
   if (!formEl) return
-  await formEl.validate((valid, fields) => {
+  await formEl.validate(async (valid, fields) => {
     if (valid) {
-      // 模拟请求，需根据实际开发进行修改
-      setTimeout(() => {
+      try {
+        // 模拟请求，需根据实际开发进行修改
+        await useUserStoreHook().loginByUsername(ruleForm)
         loading.value = false
         successTip('登录成功')
         router.push('/')
-      }, 2000)
+      } catch (error) {
+        loading.value = false
+      }
     } else {
       loading.value = false
       return fields

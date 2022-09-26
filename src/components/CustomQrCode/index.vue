@@ -211,9 +211,6 @@ const canvasRoundRect = (ctx: CanvasRenderingContext2D) => {
 const clickCode = () => {
   emit('click')
 }
-const disabledClick = () => {
-  emit('disabled-click')
-}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 import { StorageSerializers, useStorage } from '@vueuse/core'
 import { changeTheme } from '../theme'
 
-import settings from './settings.json'
+import settings from '/@/settings/index.json'
 
 const dictionary = {
   city: ['nanjing', 'shanghai']

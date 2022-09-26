@@ -7,7 +7,7 @@ import { asyncRoutes, basicRoutes } from './routes'
 // 白名单应该包含基本静态路由
 const WHITE_NAME_LIST: string[] = []
 
-const getRouteNames = (array: any[]) =>
+export const getRouteNames = (array: any[]) =>
   array.forEach(item => {
     WHITE_NAME_LIST.push(item.name)
     getRouteNames(item.children || [])

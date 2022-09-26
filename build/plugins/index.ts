@@ -13,6 +13,7 @@ import loadUnPluginVueComponents from './unPluginVueComponents'
 // 优雅的使用组件 name
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import { configMockPlugin } from './mock'
 
 const loadPlugins = () => [
   vue(),
@@ -37,7 +38,9 @@ const loadPlugins = () => [
   // 图片压缩
   configImageminPlugin(),
   // 用于生成 svg 雪碧图.
-  configSvgIconsPlugin()
+  configSvgIconsPlugin(),
+  // 配置mock
+  configMockPlugin()
 ]
 
 export default loadPlugins

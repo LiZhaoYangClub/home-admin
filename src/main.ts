@@ -8,8 +8,9 @@ import '/@/styles/index.scss'
 import { createApp } from 'vue'
 
 import { setupStore } from '/@/store'
-import { setupRouter } from '/@/router'
+import { router, setupRouter } from '/@/router'
 import { setupPlugin } from '/@/plugins'
+import { setupRouterGuard } from './router/guard'
 
 const bootstrap = async () => {
   const app = createApp(App)
@@ -36,7 +37,7 @@ const bootstrap = async () => {
 
   // router-guard
   // 路由守卫
-  // setupRouterGuard(router)
+  setupRouterGuard(router)
 
   // Register global directive
   // 注册全局指令

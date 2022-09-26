@@ -64,3 +64,7 @@ interface WheelEvent {
 interface ImportMetaEnv extends ViteEnv {
   __: unknown
 }
+
+declare type Nullable<T> = T | null
+declare type Recordable<T = any> = Record<string, T>
+declare type NonNullable<T> = T extends null | undefined ? never : T
