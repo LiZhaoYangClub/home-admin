@@ -34,7 +34,16 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `$prefixCls: lzy;@use "/@/styles/element/index.scss" as *;`
+        additionalData: `
+          $prefixCls: lzy;
+          $screen-xs: 480px;
+          $screen-sm: 576px;
+          $screen-md: 768px;
+          $screen-lg: 992px;
+          $screen-xl: 1200px;
+          $screen-2xl: 1600px;
+          @use "/@/styles/element/index.scss" as *;
+        `
       }
     }
   },
