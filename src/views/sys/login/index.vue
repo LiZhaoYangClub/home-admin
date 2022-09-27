@@ -1,9 +1,9 @@
 <template>
   <div :class="`${prefixCls} w-100 h-100 position-relative overflow-hidden`">
     <img :src="bg" class="wave" />
-    <ToolBar />
+    <ToolBar class="bar" />
     <div class="container position-center d-flex w-100 justify-content-around align-items-center">
-      <div class="img`">
+      <div class="img">
         <component :is="currentWeek" />
       </div>
       <LoginForm />
@@ -36,6 +36,39 @@ $login-page: '#{$prefixCls}-login-page';
     height: 80%;
     .img {
       width: 500px;
+    }
+  }
+  @media screen and (min-width: $screen-xs) {
+    .img {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $screen-sm) {
+    .img {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    .img {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    .img {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    .img {
+      display: block;
+    }
+  }
+  @media screen and (min-width: $screen-2xl) {
+    .img {
+      display: block;
     }
   }
 }

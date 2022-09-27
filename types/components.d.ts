@@ -9,14 +9,25 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     CustomQrCode: typeof import('./../src/components/CustomQrCode/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
+    ElDropdown: typeof import('element-plus/es')['ElDropdown']
+    ElForm: typeof import('element-plus/es')['ElForm']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ImageVerify: typeof import('./../src/components/ImageVerify/index.vue')['default']
     Motion: typeof import('./../src/components/Motion/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./../src/components/SvgIcon/index.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
