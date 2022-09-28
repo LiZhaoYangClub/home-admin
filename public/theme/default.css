@@ -41,4 +41,7 @@
   --c-placeholder-border-color: #a8abb2;
   /* 禁用类 */
   --c-disabled-border-color: #c0c4cc;
+
+  /* 菜单 */
+  --c-menu-bg-color: #545c64;
 }

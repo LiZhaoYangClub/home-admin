@@ -6,31 +6,28 @@ import { getLogin, getUserInfo, getUserRoutes, refreshToken } from '/@/api/user'
 import { setToken, removeToken } from '/@/utils/auth'
 import { Recordable } from '/#/index'
 import type { RouteRecordRaw } from 'vue-router'
-import { formatAsyncRoutes } from '/@/router/guard/permissionUtils'
+import { formatAsyncRoutes, filterNoStaticRoutes } from '/@/router/guard/permissionUtils'
 
 type userType = {
-  name?: string
   verifyCode?: string
   currentPage?: number
   userinfo?: Recordable | null
   asyncRoutes?: RouteRecordRaw[] | null
+  wholeMenu: RouteRecordRaw[]
 }
 
 export const useUserStore = defineStore({
   id: 'system-user',
   state: (): userType => ({
-    name: '',
     // 前端生成的验证码（按实际需求替换）
     verifyCode: '',
     // 登录显示组件判断 0：登录 1：手机登录 2：二维码登录 3：注册 4：忘记密码，默认0：登录
     currentPage: 0,
     userinfo: null,
-    asyncRoutes: null
+    asyncRoutes: null,
+    wholeMenu: []
   }),
   actions: {
-    SET_NAME(name: string) {
-      this.name = name
-    },
     SET_VERIFY_CODE(verifyCode: string) {
       this.verifyCode = verifyCode
     },
@@ -43,8 +40,7 @@ export const useUserStore = defineStore({
         try {
           const data = await getLogin(params)
           if (data) {
-            const { token, name } = data || {}
-            this.name = name
+            const { token } = data || {}
             setToken(token)
             resolve()
           }
@@ -55,10 +51,7 @@ export const useUserStore = defineStore({
     },
     /** 登出 清空缓存 */
     logOut() {
-      this.name = ''
-      removeToken()
-      // 清除缓存
-      locale.clear()
+      this.shadowClearCacheAndToken()
       router.push('/login')
     },
     /** 刷新token */
@@ -99,11 +92,35 @@ export const useUserStore = defineStore({
           const data = await getUserRoutes(params)
           const routes = formatAsyncRoutes(data)
           this.asyncRoutes = routes || []
+
+          // 切记将路由push到routes后还需要使用addRoute，这样路由才能正常跳转
+          const routerOptionsRoutes = router.options.routes as RouteRecordRaw[]
+          routes.forEach(routeItem => routerOptionsRoutes.push(routeItem))
+          this.wholeMenu = filterNoStaticRoutes(routerOptionsRoutes) || []
           resolve(routes)
         } catch (error) {
           reject(error)
         }
       })
+    },
+    /** 清空缓存页面保留token */
+    shadowClearCacheNotToken() {
+      this.userinfo = null
+      this.asyncRoutes = null
+    },
+    /** 清空缓存页面去重新登录 */
+    shadowClearCacheAndToken() {
+      this.userinfo = null
+      this.asyncRoutes = null
+      removeToken()
+    },
+    /** 彻底清除缓存 */
+    deppClearCache() {
+      this.userinfo = null
+      this.asyncRoutes = null
+      removeToken()
+      // 清除缓存
+      locale.clear()
     }
   }
 })

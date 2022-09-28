@@ -2,12 +2,12 @@
   <el-container
     :class="`${prefixCls} w-100 h-100 overflow-hidden position-relative d-flex flex-column`"
   >
-    <el-header class="header overflow-hidden">Header</el-header>
+    <el-header class="header overflow-hidden">
+      <Header />
+    </el-header>
     <el-container class="flex-1 overflow-hidden position-relative">
-      <el-aside width="200px" class="aside">
-        <el-scrollbar height="100%">
-          <div v-for="item in 10" :key="item">11111</div>
-        </el-scrollbar>
+      <el-aside :width="asideWidth" class="aside">
+        <el-scrollbar height="100%"> <Menu /> </el-scrollbar>
       </el-aside>
       <el-main class="overflow-hidden main" style="padding: 0">
         <el-scrollbar height="100%">
@@ -20,14 +20,32 @@
 
 <script lang="ts" setup name="Layout">
 import { sys } from '/@/hooks'
+import Menu from './components/menu/menu.vue'
+import Header from './components/header/index.vue'
+import { systemApp } from './hooks'
 
+const { isCollapse } = systemApp()
 const prefixCls = computed(() => `${sys.value.prefixCls}-layout`)
+
+const asideWidth = computed<string>(() => (isCollapse.value ? '64px' : '200px'))
 </script>
 
 <style lang="scss" scoped>
 $layout: '#{$prefixCls}-layout';
 
 .#{$layout} {
+  .aside {
+    background-color: var(--c-menu-bg-color);
+  }
+  @media screen and (max-width: $screen-xs) {
+    .header {
+      display: none;
+      background-color: rgb(22, 14, 14);
+    }
+    .aside {
+      display: none;
+    }
+  }
   @media screen and (min-width: $screen-xs) {
     .header {
       display: none;
@@ -39,7 +57,7 @@ $layout: '#{$prefixCls}-layout';
   }
   @media screen and (min-width: $screen-sm) {
     .header {
-      display: none;
+      display: block;
       background-color: #fff;
     }
     .aside {

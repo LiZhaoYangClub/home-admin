@@ -29,4 +29,19 @@
 
   /* SvgIcon */
   --c-svg-icon-color: #ffffff;
+
+  /* 边框 */
+  /* 标题色 */
+  --c-primary-border-color: #303133;
+  /* 正文色 */
+  --c-regular-border-color: #606266;
+  /* 二级文字 */
+  --c-secondary-border-color: #909399;
+  /* 提示类 */
+  --c-placeholder-border-color: #a8abb2;
+  /* 禁用类 */
+  --c-disabled-border-color: #c0c4cc;
+
+  /* 菜单 */
+  --c-menu-bg-color: #545c64;
 }

@@ -7,7 +7,6 @@ const user: RouteRecordRaw = {
   component: LAYOUT,
   redirect: '/user/role',
   meta: {
-    hideChildrenInMenu: true,
     icon: 'simple-icons:about-dot-me',
     title: 'user'
   },
@@ -18,8 +17,7 @@ const user: RouteRecordRaw = {
       component: () => import('/@/views/user/roles/index.vue'),
       meta: {
         title: 'userRole',
-        icon: 'simple-icons:about-dot-me',
-        hideMenu: true
+        icon: 'simple-icons:about-dot-me'
       }
     }
   ]

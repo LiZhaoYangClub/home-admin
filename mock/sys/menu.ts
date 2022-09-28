@@ -8,7 +8,7 @@ const dashboardRoute = {
   component: 'LAYOUT',
   redirect: '/dashboard/analysis',
   meta: {
-    title: 'routes.dashboard.dashboard',
+    title: 'dashboard',
     hideChildrenInMenu: true,
     icon: 'bx:bx-home'
   },
@@ -20,9 +20,9 @@ const dashboardRoute = {
       meta: {
         hideMenu: true,
         hideBreadcrumb: true,
-        title: 'routes.dashboard.analysis',
+        title: 'analysis',
         currentActiveMenu: '/dashboard',
-        icon: 'bx:bx-home'
+        icon: 'day'
       }
     },
     {
@@ -32,7 +32,7 @@ const dashboardRoute = {
       meta: {
         hideMenu: true,
         hideBreadcrumb: true,
-        title: 'routes.dashboard.workbench',
+        title: 'workbench',
         currentActiveMenu: '/dashboard',
         icon: 'bx:bx-home'
       }
@@ -45,24 +45,28 @@ const backRoute = {
   name: 'PermissionBackDemo',
   component: 'LAYOUT',
   meta: {
-    title: 'routes.demo.permission.back'
+    title: 'back',
+    icon: 'dark'
   },
 
   children: [
     {
       path: 'page',
       name: 'BackAuthPage',
-      component: '/demo/permission/back/index',
+      component: '/back/backPage/index',
       meta: {
-        title: 'routes.demo.permission.backPage'
+        title: 'backPage',
+        icon: 'phone'
       }
     },
     {
       path: 'btn',
       name: 'BackAuthBtn',
-      component: '/demo/permission/back/Btn',
+      component: '/back/backBtn/index',
       meta: {
-        title: 'routes.demo.permission.backBtn'
+        title: 'backBtn',
+        hideMenu: true,
+        currentActiveMenu: '/back/page'
       }
     }
   ]
@@ -74,14 +78,14 @@ const linkRoute = {
   component: 'LAYOUT',
   meta: {
     icon: 'ion:tv-outline',
-    title: 'routes.demo.iframe.frame'
+    title: 'frame'
   },
   children: [
     {
       path: 'doc',
       name: 'Doc',
       meta: {
-        title: 'routes.demo.iframe.doc',
+        title: 'doc',
         frameSrc: 'https://vvbin.cn/doc-next/'
       }
     },
@@ -90,7 +94,7 @@ const linkRoute = {
       name: 'DocExternal',
       component: 'LAYOUT',
       meta: {
-        title: 'routes.demo.iframe.docExternal',
+        title: 'docExternal',
         frameSrc: 'https://vvbin.cn/doc-next/'
       }
     }

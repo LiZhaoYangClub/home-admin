@@ -38,6 +38,11 @@ $login-page: '#{$prefixCls}-login-page';
       width: 500px;
     }
   }
+  @media screen and (max-width: $screen-xs) {
+    .img {
+      display: none;
+    }
+  }
   @media screen and (min-width: $screen-xs) {
     .img {
       display: none;

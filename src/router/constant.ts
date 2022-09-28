@@ -15,3 +15,12 @@ export const PAGE_NO_SERVER = () => import('/@/views/sys/500/index.vue')
  * @description: default layout
  */
 export const LAYOUT = () => import('/@/layout/index.vue')
+
+export const STATIC_ROUTE_NAME_LIST = [
+  'PageRedirect',
+  'PageNoServer',
+  'PageNoExist',
+  'PageNoAccess',
+  'Root',
+  'Login'
+]

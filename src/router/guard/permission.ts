@@ -66,12 +66,9 @@ export function createPermissionGuard(router: Router) {
     // async load routes
     if (!useUserStoreHook().asyncRoutes) {
       const routes = await useUserStoreHook().getAsyncRoutes()
-      console.log(11111, routes)
-
       routes.forEach((route: RouteRecordRaw) => {
         router.addRoute(route)
       })
-      console.log(2222, router.getRoutes())
 
       if (to.name === PAGE_NO_EXIST_NAME) {
         // 动态添加路由后，此处应当重定向到fullPath，否则会加载404页面内容

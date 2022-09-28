@@ -31,9 +31,9 @@ export const PAGE_NO_SERVER_ROUTE: RouteRecordRaw = {
 export const REDIRECT_ROUTE: RouteRecordRaw = {
   path: '/redirect',
   component: () => import('/@/views/sys/redirect/index.vue'),
-  name: 'RedirectTo',
+  name: REDIRECT_NAME,
   meta: {
-    title: REDIRECT_NAME
+    title: 'redirect'
   }
 }
 
